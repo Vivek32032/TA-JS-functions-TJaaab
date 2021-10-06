@@ -1,8 +1,8 @@
 /*
 1. Create a function named `sayHello` that that accepts a parameter `name` and alert `Hello [name]!`.
 */
-function  sayHello(name){
-   alert(`Hello ${name}!`);
+function sayHello(name) {
+  alert(`Hello ${name}!`);
 }
 sayHello("Vivek");
 
@@ -14,10 +14,10 @@ Example:
   getFullName("John", "Snow"); // "John Snow"
   getFullName("Nelson", "Mandela"); // "Nelson Mandela"
 */
-function getFullName(firstName, lastName){
-   return `${firstName} ${lastName}`
+function getFullName(firstName, lastName) {
+  return `${firstName} ${lastName}`;
 }
-let name1 = getFullName("Vivek","Kumar");
+let name1 = getFullName("Vivek", "Kumar");
 alert(name1);
 /*
 3. Create a function named `addTwoNumbers` that accepts two numbers i.e `firstNum` and `secondNum` and returns
@@ -28,10 +28,17 @@ addTwoNumbers(10, 22); // 32
 addTwoNumbers(20, 32); // 32
 addTwoNumbers(10, "100"); // Alert Enter Valid Input
 */
-function addTwoNumbers(firstNum,secondNum){
+function addTwoNumbers(firstNum, secondNum) {
+  if (
+    typeof firstNum !== "number" ||
+    typeof secondNum !== "number") {
+    alert(`Enter Valid Input`);
+  }
+else {
   return `${firstNum + secondNum}`
 }
-let sum1 = addTwoNumbers(23,25)
+}
+let sum1 = addTwoNumbers(23, 25)
 alert(sum1);
 
 /*
@@ -46,29 +53,31 @@ calc(20, 10, 'sub'); // 10
 calc(20, 10, 'mul'); // 200
 */
 function calc(numA, numB, operation) {
-  if (isNaN(numA) || isNaN(numB)) {
+  if (typeof(numA) === "number" || typeof(numB) === "number") {
     return `Enter valid Input`
   }
   else {
     switch (operation) {
       case 'add': return `sum is ${numA + numB}`;
-      break;
+        break;
       case 'sub': if (numA > numB) { return `subtraction is ${numA - numB}`; }
       else {
-        return`subtraction is ${numB - numA}`;
-      }break;
+        return `subtraction is ${numB - numA}`;
+      } break;
       case 'mul': return `multiplication is ${numA * numB}`;
-      break;
+        break;
       case 'div': return `division is ${numA / numB}`;
-      break;
+        break;
+        default:
+          alert('Enter valid operation');
 
     }
   }
 }
-let result1 = calc (4, 2,'add');
-let result2 = calc (5, 2,'mul');
-let result3 = calc (8, 2,'sub');
-let result4 = calc (8, 2,'div');
+let result1 = calc(4, 2, 'add');
+let result2 = calc(5, 2, 'mul');
+let result3 = calc(8, 2, 'sub');
+let result4 = calc(8, 2, 'div');
 
 
 
@@ -86,22 +95,26 @@ on if the year id leap year or not.
 isLeapYear(2000); // true
 isLeapYear(2001); // false
 */
-function isLeapYear(number){
-  if (isNaN(number)===true){
+function isLeapYear(year) {
+  if (typeof(year) !== 'number') {
     return `Enter valid Input`;
   }
-  if (number % 400 === 0){
-    return `true`;
+  if (year % 400 === 0) {
+    return true;
   }
-  else if (number % 100 === 0){
-    return `false`;
+  else if (year % 100 === 0) {
+    return false;
   }
-  else if(number % 4 === 0){
-    return `true`;
+  else if (year % 4 === 0) {
+    return true;
   }
   else {
-    return `false`;
+    return false;
   }
+}
+
+function isLeapYear(year){
+  if (year % 400 === 0) return true;
 }
 
 let year1 = isLeapYear(1600);
@@ -113,13 +126,13 @@ alert(year2);
 6. Create a function named `getFactorial` that accepts a number and return the factorial of the number.
 */
 
-function getFactorial(num){
- let result=1;
-   for (let i=1; i<= num; i++){
-     result= result*i;
-   }
-   return `${result}`;
-     
+function getFactorial(num) {
+  let result = 1;
+  for (let i = 1; i <= num; i++) {
+    result = result * i;
+  }
+  return `${result}`;
+
 }
 let outCome1 = getFactorial(5);
 let outCome2 = getFactorial(8);
