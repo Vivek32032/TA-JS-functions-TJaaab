@@ -234,14 +234,14 @@ function oddOrEven(number) {
 }
 
 // - Write an anonymous Function Expression
-// let oddOrEven = function(number){
-//   if (number % 2 ===0){
-//     return `Number is even`
-//   }
-//   else{
-//     return `Number is odd`
-//   }
-// }
+let oddOrEven = function(number){
+  if (number % 2 ===0){
+    return `Number is even`
+  }
+  else{
+    return `Number is odd`
+  }
+}
 
 // - Write an named Function Expression
 
@@ -255,7 +255,7 @@ let oddOrEven = function checkOdd(number) {
 }
 
 // - Write an Arrow Function without curly brackets (hint: use ternary operator)
-let oddOrEven = (number) => (number % 2 === 0) ? `Number is even` : `Number is odd`
+let oddOrEven = (number) => (number % 2 === 0) ? `Number is even` : `Number is odd` //it is implicit return.
 
 
 
