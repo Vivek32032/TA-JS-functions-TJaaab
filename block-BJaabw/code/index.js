@@ -11,8 +11,10 @@ minToSec(2) ➞ 120
 */
 
 // - Write a Function Decleration for above problem
-function minToSec() {
+function minToSec(minute) {
   // Your code
+  let sec = minute * 60
+  return `${sec} seconds`
 }
 // - Execute the function with required parameter
 
@@ -26,8 +28,14 @@ isInRange(1, 10, 19); // false
 */
 
 // - Write a Function Decleration for above problem
-function isInRange() {
+function isInRange(lowervalue, uppervalue, n) {
   // Your code
+  if (n > lowervalue && n < uppervalue) {
+    return true
+  }
+  else {
+    return false
+  }
 }
 // - Execute the function with required parameter
 
@@ -49,38 +57,78 @@ Obese: BMI is 30 or more
 
 */
 
-function calculateBMI() {
+function calculateBMI(weight, height) {
   // Your code
+  let bmi = weight / (height * height);
+  switch (true) {
+    case (bmi < 18.5):
+      return `Underweight`;
+      break;
+    case (bmi >= 18.5 && bmi <= 24.9):
+      return `Normal weight`;
+      break;
+    case (bmi >= 25 && bmi <= 29.9):
+      return `Overweight`;
+      break;
+    case (bmi >= 30):
+      return `Obese`;
+      break;
+    default:
+      return `Entered condition are invalid`;
+  }
 }
 
-/* 3. appropiateDrinks
+/* 3. appropriateDrinks
 
-Create a function that take the age are return the appropiate drink based on these conditions:
+Create a function that take the age and return the appropriate drink based on these conditions:
 
 - Under 14 years old — return "drink fruit juice"
 - Under 18 years old — return "drink soda"
 - Under 21 — return "drink fruit-flavored beer"
 - 21 years or older — return "drink throat-piercing vodka"
-
 */
 
-function appropiateDrinks() {
+
+function appropiateDrinks(age) {
   // Your code
+  switch(true){
+    case (age < 14):
+      return "Drink fruit juice"
+    break;
+    case (age < 18):
+      return "Drink soda"
+    break;
+    case (age < 21):
+      return "Drink fruit-flavored beer"
+    break;
+    case (age <= 21):
+      return "drink throat-piercing vodka"
+    break;
+    default:
+      return "enter correct age"
+    
+  }
 }
 
-/* 4. Add two numers or string
+/* 4. Add two numbers or string
 
 Write a function that accepts two numbers or string and returns the sum of the numbers and concatenation of the strings.
 Twist is when user passes anything other than number, or string value you should be able to handle that.
 
 - If both values are number add them
-- If both values are string concat theme
+- If both values are string concat them
 - Anything other than that alert "Enter valid values"
 
 */
 
-function sum() {
+function sum(numA, numB) {
   // Your code
+   if((typeof(numA) === "number" && typeof(numB) === "number") || (typeof(numA) === "string" && typeof(numB) === "string")){
+     return numA + numB;
+   }
+   else {
+     return `Enter valid values`;
+   }
 }
 
 // Function Test
