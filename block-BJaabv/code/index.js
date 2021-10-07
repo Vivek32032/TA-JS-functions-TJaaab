@@ -25,7 +25,7 @@ calculateDogAge(5, 5);
 function calculateMoviesToWatch(age, moviesPerWeek) {
   // Your code goes here
   const maxAge = 60;
-  return (60 - age) * 12 * 4;
+  return (maxAge - age) * 12 * 4 * moviesPerWeek;
 }
 calculateMoviesToWatch(10, 5);
 /*
@@ -145,7 +145,7 @@ function min(numA, numB) {
    if (numA > numB){
      return `${numB} is minimum`;
    }
-   else {
+   if (numA < numB) {
      return `${numA} is minimum`;
    }
 }
